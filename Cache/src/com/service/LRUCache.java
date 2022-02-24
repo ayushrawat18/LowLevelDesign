@@ -1,40 +1,51 @@
 package com.service;
 
+import com.algorithm.DoublyLinkedList;
+import com.algorithm.DoublyLinkedListNode;
 import com.interfaces.Cache;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class LRUCache<K, V> implements Cache<K, V> {
+public class LRUCache implements Cache {
 
     int capacity;
-    Map<K, V> dll;
+    Map<Integer, DoublyLinkedListNode> dll;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
         dll = new HashMap<>();
-    }
-
-    @Override
-    public void add(K key, V value) {
-       if (isStorageFull()) {
-
-       }
+        impl = new DoublyLinkedList();
     }
 
 
     @Override
-    public void remove(Object key) {
+    public void add(Integer key, Integer value) {
+        if (dll.containsKey(key)) {
+            DoublyLinkedListNode node = dll.get(key);
+
+
+        }
+
+            if (isStorageFull()) {
+
+        }
+    }
+
+    @Override
+    public void remove(Integer key) {
 
     }
 
     @Override
-    public void get(Object key) {
+    public void get(Integer key) {
 
     }
+
 
     private boolean isStorageFull() {
         return capacity == dll.size();
     }
+
 
 }

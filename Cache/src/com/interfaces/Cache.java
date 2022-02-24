@@ -1,11 +1,11 @@
 package com.interfaces;
 
-public interface Cache<K, V> {
+public interface Cache {
 
- public void add(K key, V value);
+ public void add(Integer key, Integer value);
 
- public void remove(K key);
+ public void remove(Integer key);
 
- public void get(K key);
+ public void get(Integer key);
 
 }
